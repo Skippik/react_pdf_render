@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "epost_id": 101,
+    "epost_name": "Post Office A",
+    "barcode": "ABC123456789",
+    "error": "",
+    "warning": "Barcode might be damaged"
+  },
+  {
+    "id": 2,
+    "epost_id": 102,
+    "epost_name": "Post Office B",
+    "barcode": "XYZ987654321",
+    "error": "Barcode not found",
+    "warning": ""
+  },
+  {
+    "id": 3,
+    "epost_id": 103,
+    "epost_name": "Post Office C",
+    "barcode": "LMN456789123",
+    "error": "",
+    "warning": ""
+  }
+]
