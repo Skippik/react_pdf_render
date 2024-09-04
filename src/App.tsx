@@ -1,13 +1,13 @@
-import ProofOfDelivery from './ProofOfDelivery';
 import './assets/reset.less';
-import Parcer from './parcer';
+import ScrollAnimating from './ScrollAnimating';
 
 function App() {
   return (
-    <div style={{height: '100vh', overflowY: 'hidden'}}>
-      {/* <ProofOfDelivery /> */}
-      <Parcer />
-    </div>
+    // <div style={{padding: 40}}>
+    // {/* <ProofOfDelivery /> */}
+    // {/* <Parcer /> */}
+    <ScrollAnimating />
+    // </div>
   );
 }
 
