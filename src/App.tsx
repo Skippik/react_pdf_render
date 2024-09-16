@@ -1,36 +1,26 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 import {Button, Flex, notification, Typography} from 'antd';
 import './assets/reset.less';
+import {usePyWebView} from './hooks/usePyWebView';
 
 function App() {
   //
-  const openPython = (appName: string) => {
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    //@ts-expect-error
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    let windowPyWebView = window.pywebview;
-    console.log('windowPyWebView', windowPyWebView);
+  const pyWebView = usePyWebView();
 
-    if (windowPyWebView && windowPyWebView.api) {
-      notification.success({
-        message: `Open ${appName} success`,
-        type: 'success',
-      });
-      windowPyWebView.api.echo(appName);
-    } else {
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-      //@ts-expect-error
-      // eslint-disable-next-line react-hooks/exhaustive-deps
-      windowPyWebView = window.pywebview;
-    }
+  //
+  const openPython = (appName: string) => {
+    notification.success({
+      message: `Open ${appName} success`,
+      type: 'success',
+    });
+    pyWebView?.api.echo(appName);
+  };
+  //
+  const viewFunctionDll = () => {
+    pyWebView?.api.open_dll();
   };
   //
   return (
-    // <div style={{padding: 40}}>
-    // {/* <ProofOfDelivery /> */}
-    // {/* <Parcer /> */}
-    // <ScrollAnimating />
-    // </div>
     <>
       <Flex justify='center'>
         <Typography.Title>
@@ -69,6 +59,9 @@ function App() {
           }}
           type='primary'>
           {'Open GOOGLE python'}
+        </Button>
+        <Button onClick={viewFunctionDll} type='primary'>
+          {'View function DLL'}
         </Button>
       </Flex>
     </>
